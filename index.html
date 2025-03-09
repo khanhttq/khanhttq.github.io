@@ -78,10 +78,16 @@
 <section>
     <h2>About Me</h2>
     <p>
-        Xin chào! Tôi là Trần Triệu Quốc Khánh, với hơn 08 năm kinh nghiệm trong lĩnh vực phần mềm, chuyên tư vấn, thiết kế các giải pháp công nghệ cho các doanh nghiệp sử dụng các hệ thống CRM, CDP. Tôi đam mê tối ưu hóa quy trình, dẫn dắt các đội nhóm đa chức năng, 
+        Xin chào! Tôi là Trần Triệu Quốc Khánh, với hơn <span id="experience-years"></span> năm kinh nghiệm trong lĩnh vực phần mềm, chuyên tư vấn, thiết kế các giải pháp công nghệ cho các doanh nghiệp sử dụng các hệ thống CRM, CDP. Tôi đam mê tối ưu hóa quy trình, dẫn dắt các đội nhóm đa chức năng, 
         và đảm bảo rằng mỗi dự án đều đạt được hiệu quả cao nhất về chất lượng và hiệu suất.
     </p>
 </section>
+
+<script>
+    const startYear = 2016; // Năm bắt đầu làm việc
+    const currentYear = new Date().getFullYear();
+    document.getElementById("experience-years").textContent = currentYear - startYear;
+</script>
 
 <section>
     <h2>Skills</h2>
