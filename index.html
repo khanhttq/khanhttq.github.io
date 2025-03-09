@@ -68,73 +68,6 @@
         }
     </style>
 </head>
-<script>
-    // Webhook URL của n8n
-    const N8N_WEBHOOK_URL = "https://n8n.twin.vn/webhook/user-tracking";
-
-    // Tracking Page View
-    function trackPageView() {
-        fetch(N8N_WEBHOOK_URL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                event: "page_view",
-                url: window.location.href,
-                referrer: document.referrer,
-                timestamp: new Date().toISOString(),
-                userAgent: navigator.userAgent,
-            }),
-        });
-    }
-
-    // Tracking Click vào các liên kết
-    function trackClicks() {
-        document.body.addEventListener("click", function (event) {
-            let target = event.target.closest("a");
-            if (target && target.href) {
-                fetch(N8N_WEBHOOK_URL, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        event: "link_click",
-                        url: target.href,
-                        text: target.innerText,
-                        timestamp: new Date().toISOString(),
-                    }),
-                });
-            }
-        });
-    }
-
-    // Tracking Scroll Depth (chỉ gửi khi scroll >50%)
-    function trackScrollDepth() {
-        let scrolled = false;
-        window.addEventListener("scroll", function () {
-            if (!scrolled && (window.scrollY / document.body.scrollHeight) > 0.5) {
-                scrolled = true;
-                fetch(N8N_WEBHOOK_URL, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        event: "scroll_depth",
-                        depth: "50%",
-                        timestamp: new Date().toISOString(),
-                    }),
-                });
-            }
-        });
-    }
-
-    // Gọi hàm tracking khi trang load
-    document.addEventListener("DOMContentLoaded", function () {
-        trackPageView();
-        trackClicks();
-        trackScrollDepth();
-    });
-</script>
-
 <body>
 
 <header>
@@ -189,6 +122,61 @@
 <footer>
     <p>&copy; 2024 Trần Triệu Quốc Khánh. All Rights Reserved.</p>
 </footer>
+
+<!-- Tracking Script -->
+<script>
+    let trackingData = [];
+    let lastSentTime = Date.now();
+    const SEND_INTERVAL = 5000; // 5 giây gửi 1 lần
+    const TRACKING_URL = "https://n8n.twin.vn/webhook/495eaa71-b6e0-4402-9b6d-22b1e796e8d1"; // Thay bằng webhook của bạn
+
+    function trackEvent(eventType, details) {
+        trackingData.push({
+            event: eventType,
+            details: details,
+            timestamp: new Date().toISOString()
+        });
+
+        // Nếu đã quá 5 giây từ lần gửi trước thì gửi dữ liệu
+        if (Date.now() - lastSentTime > SEND_INTERVAL) {
+            sendBatchData();
+            lastSentTime = Date.now();
+        }
+    }
+
+    function sendBatchData() {
+        if (trackingData.length === 0) return; // Không gửi nếu không có dữ liệu mới
+
+        fetch(TRACKING_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ events: trackingData })
+        })
+        .then(response => response.json())
+        .then(data => console.log("✅ Tracking batch sent:", data))
+        .catch(error => console.error("❌ Tracking failed:", error));
+
+        // Xóa dữ liệu đã gửi
+        trackingData = [];
+    }
+
+    // Gửi dữ liệu mỗi 5 giây nếu có sự kiện mới
+    setInterval(sendBatchData, SEND_INTERVAL);
+
+    // Ghi lại sự kiện click vào các nút quan trọng
+    document.addEventListener("click", (event) => {
+        if (event.target.tagName === "BUTTON") {
+            trackEvent("click", { element: event.target.innerText });
+        }
+    });
+
+    // Ghi lại khi user scroll qua 50% trang
+    document.addEventListener("scroll", () => {
+        if (window.scrollY > document.body.scrollHeight * 0.5) {
+            trackEvent("scroll", { scrollY: window.scrollY });
+        }
+    });
+</script>
 
 </body>
 </html>
