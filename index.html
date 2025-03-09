@@ -68,73 +68,7 @@
         }
     </style>
 </head>
-<script>
-    // Webhook URL của n8n
-    const N8N_WEBHOOK_URL = "https://n8n.twin.vn/webhook/user-tracking";
-
-    // Tracking Page View
-    function trackPageView() {
-        fetch(N8N_WEBHOOK_URL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                event: "page_view",
-                url: window.location.href,
-                referrer: document.referrer,
-                timestamp: new Date().toISOString(),
-                userAgent: navigator.userAgent,
-            }),
-        });
-    }
-
-    // Tracking Click vào các liên kết
-    function trackClicks() {
-        document.body.addEventListener("click", function (event) {
-            let target = event.target.closest("a");
-            if (target && target.href) {
-                fetch(N8N_WEBHOOK_URL, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        event: "link_click",
-                        url: target.href,
-                        text: target.innerText,
-                        timestamp: new Date().toISOString(),
-                    }),
-                });
-            }
-        });
-    }
-
-    // Tracking Scroll Depth (chỉ gửi khi scroll >50%)
-    function trackScrollDepth() {
-        let scrolled = false;
-        window.addEventListener("scroll", function () {
-            if (!scrolled && (window.scrollY / document.body.scrollHeight) > 0.5) {
-                scrolled = true;
-                fetch(N8N_WEBHOOK_URL, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        event: "scroll_depth",
-                        depth: "50%",
-                        timestamp: new Date().toISOString(),
-                    }),
-                });
-            }
-        });
-    }
-
-    // Gọi hàm tracking khi trang load
-    document.addEventListener("DOMContentLoaded", function () {
-        trackPageView();
-        trackClicks();
-        trackScrollDepth();
-    });
-</script>
-
+<script src="tracking.js"></script>
 <body>
 
 <header>
@@ -189,6 +123,5 @@
 <footer>
     <p>&copy; 2024 Trần Triệu Quốc Khánh. All Rights Reserved.</p>
 </footer>
-
 </body>
 </html>
