@@ -20,15 +20,12 @@
     }
 
     document.addEventListener("DOMContentLoaded", function() {
-        // Lấy IP từ API ngoài
         fetch("https://api64.ipify.org?format=json")
         .then(response => response.json())
         .then(ipData => {
             const userIP = ipData.ip;
-            const cookies = document.cookie || "No cookies"; // Lấy cookie nếu có
             const deviceInfo = getDeviceInfo();
 
-            // Gửi dữ liệu tracking đến webhook
             fetch("https://n8n.twin.vn/webhook/495eaa71-b6e0-4402-9b6d-22b1e796e8d1", {
                 method: "POST",
                 headers: {
@@ -38,7 +35,6 @@
                     event: "page_view", 
                     url: window.location.href, 
                     ip: userIP, 
-                    cookies: cookies, 
                     device: deviceInfo,
                     timestamp: new Date().toISOString() 
                 })
