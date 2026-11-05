@@ -130,7 +130,7 @@ textarea:focus-visible,
   padding: 0 var(--gap-md);
 }
 .section {
-  padding: var(--gap-xl) 0;
+  padding: clamp(48px, 6vw, 64px) 0;
   border-top: 1px solid var(--border);
 }
 .section--tight { padding: var(--gap-lg) 0; }
@@ -401,7 +401,7 @@ h2.section-title { font-size: clamp(28px, 4vw, 44px); }
 
 /* ---------- Footer ---------- */
 .site-footer { border-top: 1px solid var(--border); padding: var(--gap-lg) 0; }
-.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: var(--gap-lg); }
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: var(--gap-lg); }
 .footer-brand p { font-size: 14px; margin-top: var(--gap-sm); }
 .footer-col h4 { font-family: var(--font-display); font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); margin-bottom: var(--gap-sm); }
 .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
@@ -473,7 +473,7 @@ h2.section-title { font-size: clamp(28px, 4vw, 44px); }
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 2/1;
+  aspect-ratio: 3/1;
   background: var(--surface-2);
   border: 1px solid var(--border);
   color: var(--accent);
