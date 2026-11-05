@@ -1,128 +1,201 @@
-<!DOCTYPE html>
-<html lang="en">
-    <script src="tracking.js"></script>
+<!doctype html>
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Trần Triệu Quốc Khánh</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-        }
-        header {
-            background: #34495e;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        header p {
-            margin: 0.5rem 0;
-        }
-        section {
-            padding: 2rem 1rem;
-            max-width: 900px;
-            margin: auto;
-        }
-        section h2 {
-            border-bottom: 2px solid #34495e;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            background: #ecf0f1;
-            margin: 0.5rem 0;
-            padding: 0.5rem;
-            border-radius: 5px;
-        }
-        .project {
-            margin-bottom: 1.5rem;
-        }
-        .project img {
-            width: 100%;
-            border-radius: 5px;
-            margin-top: 0.5rem;
-        }
-        .contact a {
-            color: #34495e;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem 0;
-            background: #34495e;
-            color: #fff;
-            margin-top: 2rem;
-        }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mạch Studio — Đối tác phát triển sản phẩm số</title>
+<meta name="description" content="Mạch Studio là team phát triển & thiết kế sản phẩm số: web app, mobile app và hệ thống nội bộ, từ ý tưởng đến vận hành." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<a class="skip-link" href="#main">Bỏ qua, đến nội dung chính</a>
 
-<header>
-    <h1>Trần Triệu Quốc Khánh</h1>
-    <p>Project Manager | Business Analytics | Solution Leader</p>
-</header>
-
-<section>
-    <h2>About Me</h2>
-    <p>
-        Xin chào! Tôi là Trần Triệu Quốc Khánh, với hơn <span id="experience-years"></span> năm kinh nghiệm trong lĩnh vực phần mềm, chuyên tư vấn, thiết kế các giải pháp công nghệ cho các doanh nghiệp sử dụng các hệ thống CRM, CDP. Tôi đam mê tối ưu hóa quy trình, dẫn dắt các đội nhóm đa chức năng, 
-        và đảm bảo rằng mỗi dự án đều đạt được hiệu quả cao nhất về chất lượng và hiệu suất.
-    </p>
-</section>
-
-<script>
-    const startYear = 2016; // Năm bắt đầu làm việc
-    const currentYear = new Date().getFullYear();
-    document.getElementById("experience-years").textContent = currentYear - startYear;
-</script>
-
-<section>
-    <h2>Skills</h2>
-    <ul>
-        <li>Project Management: Agile, Scrum, Waterfall</li>
-        <li>Business Analytics: Data Analysis, Requirement Gathering, Stakeholder Management</li>
-        <li>Solution Design: Workflow Automation, System Integration</li>
-        <li>Tools: Figma, Bigquery, Looker studio, Power BI, SQL, Visio, Draw.io </li>
-    </ul>
-</section>
-<section class="projects">
-    <h2>Key Projects</h2>
-    <div class="project">
-        <h3>Enterprise CRM & CDP Implementation</h3>
-        <p>Triển khai hệ thống CRM và CDP cho nhiều doanh nghiệp quy mô lớn.</p>
-        <p><strong>Lĩnh vực Bất Động Sản:</strong> Sơn Kim Land, Phú Mỹ Hưng, ERAS Land, VCRE,...</p>
-        <p><strong>Lĩnh vực Retail:</strong> Heineken Việt Nam, Pureit, Tân Á Đại Thành</p>
-        <p><strong>Lĩnh vực F&B:</strong> In Holdings, Ampersand</p>
-        <ul>
-            <li>Lãnh đạo đội ngũ thành viên để triển khai thành công nhiều hệ thống lớn.</li>
-            <li>Phân tích yêu cầu, thiết kế quy trình, và tích hợp các hệ thống ERP, Call-Center, Email, SMS Gateway, Social System (Facebook, Zalo).</li>
-            <li>Thiết kế và triển khai các ứng dụng trên môi trường web app, mobile app</li>
-            <li>Tiết kiệm thời gian, tối ưu hóa hoạt động kinh doanh, tối ưu hóa trải nghiệm consumer.</li>
-        </ul>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>MẠCH STUDIO</a>
+    <nav class="nav-links" aria-label="Điều hướng chính">
+      <a href="index.html" aria-current="page">Trang chủ</a>
+      <a href="projects.html">Dự án</a>
+      <a href="expertise.html">Chuyên môn</a>
+      <a href="team.html">Đội ngũ</a>
+      <a href="process.html">Quy trình</a>
+      <a href="contact.html">Liên hệ</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-primary" href="contact.html">Bắt đầu dự án</a>
+      <button class="nav-toggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="mobile-panel">
+        <span class="od-stack" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
     </div>
-</section>
-<section class="contact">
-    <h2>Contact</h2>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/haroldtran9x" target="_blank">linkedin.com/in/haroldtran9x</a></p>
-</section>
+  </div>
+</header>
+<div class="mobile-panel" id="mobile-panel">
+  <div class="wrap">
+    <a href="index.html" aria-current="page">Trang chủ</a>
+    <a href="projects.html">Dự án</a>
+    <a href="expertise.html">Chuyên môn</a>
+    <a href="team.html">Đội ngũ</a>
+    <a href="process.html">Quy trình</a>
+    <a href="contact.html">Liên hệ</a>
+    <a class="btn btn-primary btn-block" href="contact.html">Bắt đầu dự án</a>
+  </div>
+</div>
 
-<footer>
-    <p>&copy; 2024 Trần Triệu Quốc Khánh. All Rights Reserved.</p>
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Product &amp; engineering studio</span>
+        <h1 class="hero-title">Biến ý tưởng số<br />thành <span class="accent-text">sản phẩm thật</span>.</h1>
+        <p class="hero-sub">Mạch Studio đồng hành với founder và doanh nghiệp từ bước đặt vấn đề, thiết kế trải nghiệm đến phát triển và vận hành sản phẩm — web app, mobile app và hệ thống nội bộ.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="contact.html">Gửi brief dự án</a>
+          <a class="btn btn-ghost" href="projects.html">Xem dự án đã triển khai</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img class="od-media od-media-cover" src="assets/hero-workspace.jpg" width="1800" height="1100" alt="Thành viên Mạch Studio đang làm việc cùng nhau trên laptop" loading="eager" />
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="stat-row">
+        <div class="od-stat reveal">
+          <span class="stat-num">05</span>
+          <span class="stat-label">Chuyên gia đa lĩnh vực trong đội ngũ</span>
+        </div>
+        <div class="od-stat reveal">
+          <span class="stat-num">05</span>
+          <span class="stat-label">Nhóm công nghệ chuyên sâu</span>
+        </div>
+        <div class="od-stat reveal">
+          <span class="stat-num">05</span>
+          <span class="stat-label">Bước trong quy trình hợp tác rõ ràng</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="capability-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Năng lực</span>
+        <h2 class="section-title" id="capability-title">Một team, đủ năng lực triển khai toàn bộ sản phẩm</h2>
+        <p>Thay vì phối hợp nhiều nhà cung cấp rời rạc, bạn làm việc với một team duy nhất xuyên suốt từ thiết kế đến vận hành.</p>
+      </div>
+      <div class="capability-grid">
+        <article class="capability-card card reveal">
+          <div class="capability-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
+          </div>
+          <h3>Thiết kế sản phẩm</h3>
+          <p>Nghiên cứu người dùng, kiến trúc thông tin và UI chi tiết, nhất quán trên mọi điểm chạm.</p>
+        </article>
+        <article class="capability-card card reveal">
+          <div class="capability-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 5l-2 14"/></svg>
+          </div>
+          <h3>Phát triển web &amp; mobile</h3>
+          <p>Xây dựng web app, mobile app và API ổn định, dễ mở rộng, dễ bàn giao cho team nội bộ.</p>
+        </article>
+        <article class="capability-card card reveal">
+          <div class="capability-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M4.2 7.8l2.3 1.3M17.5 14.9l2.3 1.3M4.2 16.2l2.3-1.3M17.5 9.1l2.3-1.3"/></svg>
+          </div>
+          <h3>Hạ tầng &amp; vận hành</h3>
+          <p>Thiết lập CI/CD, giám sát và quy trình triển khai an toàn, giảm rủi ro khi sản phẩm lớn dần.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="projects-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Dự án nổi bật</span>
+        <h2 class="section-title" id="projects-title">Một vài sản phẩm chúng tôi đã đồng hành</h2>
+        <p>Mỗi dự án là một bài toán vận hành thật — từ ứng dụng tài chính cá nhân đến hệ thống đặt lịch cho doanh nghiệp dịch vụ.</p>
+      </div>
+      <div class="project-preview-grid">
+        <article class="project-card reveal">
+          <div class="project-media"><span class="project-tag">Fintech · Mobile app</span></div>
+          <div class="project-body">
+            <h3>Finly — Quản lý tài chính cá nhân</h3>
+            <p class="od-clamp-2">Ứng dụng theo dõi chi tiêu và lập kế hoạch tiết kiệm cho người dùng trẻ, đồng bộ đa thiết bị theo thời gian thực.</p>
+            <a class="project-link" href="projects.html#finly">Xem case study →</a>
+          </div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-media"><span class="project-tag">SaaS · Booking platform</span></div>
+          <div class="project-body">
+            <h3>Veloo — Nền tảng đặt lịch dịch vụ</h3>
+            <p class="od-clamp-2">Hệ thống đặt lịch và quản lý vận hành cho chuỗi cửa hàng dịch vụ, hỗ trợ đa chi nhánh và đa vai trò.</p>
+            <a class="project-link" href="projects.html#veloo">Xem case study →</a>
+          </div>
+        </article>
+      </div>
+      <div class="hero-cta" style="margin-top: var(--gap-lg)">
+        <a class="btn btn-ghost" href="projects.html">Xem toàn bộ dự án</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="cta-title">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <div class="od-stack" style="gap: 8px; max-width: 520px;">
+          <h2 id="cta-title">Có một brief đang chờ được triển khai?</h2>
+          <p>Gửi mô tả dự án để chúng tôi phản hồi hướng tiếp cận và báo giá trong 1–2 ngày làm việc.</p>
+        </div>
+        <a class="btn btn-primary" href="contact.html">Gửi brief ngay</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>MẠCH STUDIO</a>
+        <p>Team phát triển &amp; thiết kế sản phẩm số — đồng hành từ ý tưởng đến vận hành.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Điều hướng</h4>
+        <ul>
+          <li><a href="projects.html">Dự án</a></li>
+          <li><a href="expertise.html">Chuyên môn</a></li>
+          <li><a href="team.html">Đội ngũ</a></li>
+          <li><a href="process.html">Quy trình</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Liên hệ</h4>
+        <ul>
+          <li><a href="mailto:hello@machstudio.vn">hello@machstudio.vn</a></li>
+          <li><a href="tel:+842839991234">(028) 3999 1234</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Theo dõi</h4>
+        <ul>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Behance</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Mạch Studio. Nội dung minh họa cho mục đích thiết kế mẫu.</span>
+      <span>Tầng 5, 128 Nguyễn Huệ, Quận 1, TP.HCM</span>
+    </div>
+  </div>
 </footer>
 
+<script src="script.js" defer></script>
 </body>
 </html>

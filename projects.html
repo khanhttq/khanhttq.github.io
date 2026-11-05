@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dự án — Mạch Studio</title>
+<meta name="description" content="Portfolio và case study các dự án Mạch Studio đã thiết kế, phát triển và vận hành cùng khách hàng." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Bỏ qua, đến nội dung chính</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>MẠCH STUDIO</a>
+    <nav class="nav-links" aria-label="Điều hướng chính">
+      <a href="index.html">Trang chủ</a>
+      <a href="projects.html" aria-current="page">Dự án</a>
+      <a href="expertise.html">Chuyên môn</a>
+      <a href="team.html">Đội ngũ</a>
+      <a href="process.html">Quy trình</a>
+      <a href="contact.html">Liên hệ</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-primary" href="contact.html">Bắt đầu dự án</a>
+      <button class="nav-toggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="mobile-panel">
+        <span class="od-stack" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-panel" id="mobile-panel">
+  <div class="wrap">
+    <a href="index.html">Trang chủ</a>
+    <a href="projects.html" aria-current="page">Dự án</a>
+    <a href="expertise.html">Chuyên môn</a>
+    <a href="team.html">Đội ngũ</a>
+    <a href="process.html">Quy trình</a>
+    <a href="contact.html">Liên hệ</a>
+    <a class="btn btn-primary btn-block" href="contact.html">Bắt đầu dự án</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <section class="hero section--tight" style="border-top:none; padding-bottom:0;">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-bottom:0;">
+        <span class="eyebrow">Dự án</span>
+        <h1 class="section-title">Sản phẩm thật, bài toán vận hành thật</h1>
+        <p>Bốn case study tiêu biểu cho các dạng sản phẩm Mạch Studio thường đồng hành: ứng dụng tài chính, nền tảng đặt lịch, website thương hiệu và hệ thống nội bộ.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Danh sách dự án">
+    <div class="wrap">
+      <div class="filter-rail od-cluster" role="group" aria-label="Lọc theo nhóm sản phẩm">
+        <button class="filter-chip is-active" data-filter="all" aria-pressed="true">Tất cả</button>
+        <button class="filter-chip" data-filter="mobile" aria-pressed="false">Mobile app</button>
+        <button class="filter-chip" data-filter="saas" aria-pressed="false">SaaS / Dashboard</button>
+        <button class="filter-chip" data-filter="web" aria-pressed="false">Website &amp; thương mại</button>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card card reveal" data-category="mobile">
+          <div class="project-media"><span class="project-tag">Fintech · Mobile app</span></div>
+          <div class="project-body">
+            <h3>Finly — Quản lý tài chính cá nhân</h3>
+            <p class="od-clamp-2">Ứng dụng theo dõi chi tiêu, lập ngân sách và nhắc nhở mục tiêu tiết kiệm cho người dùng trẻ.</p>
+            <div class="project-meta"><span class="chip">React Native</span><span class="chip">NestJS</span><span class="chip">PostgreSQL</span></div>
+            <a class="project-link" href="#finly">Xem case study →</a>
+          </div>
+        </article>
+
+        <article class="project-card card reveal" data-category="saas">
+          <div class="project-media"><span class="project-tag">SaaS · Booking platform</span></div>
+          <div class="project-body">
+            <h3>Veloo — Nền tảng đặt lịch dịch vụ</h3>
+            <p class="od-clamp-2">Hệ thống đặt lịch, quản lý nhân sự và vận hành cho chuỗi cửa hàng dịch vụ đa chi nhánh.</p>
+            <div class="project-meta"><span class="chip">Next.js</span><span class="chip">Node.js</span><span class="chip">Redis</span></div>
+            <a class="project-link" href="#veloo">Xem case study →</a>
+          </div>
+        </article>
+
+        <article class="project-card card reveal" data-category="web">
+          <div class="project-media"><span class="project-tag">F&amp;B · Thương hiệu &amp; thương mại</span></div>
+          <div class="project-body">
+            <h3>Northside Coffee — Website &amp; đặt hàng online</h3>
+            <p class="od-clamp-2">Website thương hiệu kết hợp đặt hàng online và tích hợp chương trình khách hàng thân thiết.</p>
+            <div class="project-meta"><span class="chip">Next.js</span><span class="chip">Stripe</span><span class="chip">Tailwind CSS</span></div>
+            <a class="project-link" href="#northside">Xem case study →</a>
+          </div>
+        </article>
+
+        <article class="project-card card reveal" data-category="saas">
+          <div class="project-media"><span class="project-tag">Internal tool · B2B dashboard</span></div>
+          <div class="project-body">
+            <h3>Orbit CRM — Quản lý khách hàng nội bộ</h3>
+            <p class="od-clamp-2">Hệ thống CRM nội bộ hợp nhất dữ liệu khách hàng, pipeline bán hàng và báo cáo cho team kinh doanh.</p>
+            <div class="project-meta"><span class="chip">React</span><span class="chip">NestJS</span><span class="chip">AWS</span></div>
+            <a class="project-link" href="#orbit">Xem case study →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Case study chi tiết">
+    <div class="wrap">
+
+      <article class="case-study" id="finly">
+        <div class="case-study-media" style="background:var(--surface);display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;">
+          <span class="project-tag" style="font-size:16px;">FINLY · FINTECH APP</span>
+        </div>
+        <div class="case-study-body">
+          <span class="case-kicker">Case study 01</span>
+          <h3>Finly — Quản lý tài chính cá nhân</h3>
+          <div class="case-block">
+            <h4>Vấn đề</h4>
+            <p>Người dùng trẻ khó theo dõi chi tiêu đa nguồn (tiền mặt, thẻ, ví điện tử) và không có công cụ đặt mục tiêu tiết kiệm phù hợp với thu nhập thực tế.</p>
+          </div>
+          <div class="case-block">
+            <h4>Giải pháp</h4>
+            <p>Xây dựng mobile app đồng bộ đa thiết bị, tự động phân loại chi tiêu và gợi ý ngân sách theo tuần; thiết kế onboarding rút gọn còn 3 bước.</p>
+          </div>
+          <div class="case-block">
+            <h4>Kết quả</h4>
+            <p>Ra mắt đúng lộ trình 10 tuần, đội ngũ nội bộ của khách hàng được chuyển giao toàn bộ codebase và tài liệu vận hành.</p>
+          </div>
+          <div class="project-meta"><span class="chip">React Native</span><span class="chip">NestJS</span><span class="chip">PostgreSQL</span><span class="chip">AWS</span></div>
+        </div>
+      </article>
+
+      <article class="case-study" id="veloo">
+        <div class="case-study-media" style="background:var(--surface);display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;">
+          <span class="project-tag" style="font-size:16px;">VELOO · BOOKING SAAS</span>
+        </div>
+        <div class="case-study-body">
+          <span class="case-kicker">Case study 02</span>
+          <h3>Veloo — Nền tảng đặt lịch dịch vụ</h3>
+          <div class="case-block">
+            <h4>Vấn đề</h4>
+            <p>Chuỗi 12 cửa hàng dịch vụ đặt lịch thủ công qua điện thoại, dẫn đến trùng lịch, thất thoát khách và khó tổng hợp báo cáo đa chi nhánh.</p>
+          </div>
+          <div class="case-block">
+            <h4>Giải pháp</h4>
+            <p>Phát triển nền tảng đặt lịch tự phục vụ cho khách hàng, kèm bảng điều khiển vận hành đa vai trò (nhân viên, quản lý chi nhánh, chủ chuỗi).</p>
+          </div>
+          <div class="case-block">
+            <h4>Kết quả</h4>
+            <p>Toàn bộ 12 chi nhánh vận hành trên một hệ thống duy nhất; dữ liệu đặt lịch được đồng bộ theo thời gian thực.</p>
+          </div>
+          <div class="project-meta"><span class="chip">Next.js</span><span class="chip">Node.js</span><span class="chip">Redis</span><span class="chip">Docker</span></div>
+        </div>
+      </article>
+
+      <article class="case-study" id="northside">
+        <div class="case-study-media" style="background:var(--surface);display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;">
+          <span class="project-tag" style="font-size:16px;">NORTHSIDE COFFEE · WEB</span>
+        </div>
+        <div class="case-study-body">
+          <span class="case-kicker">Case study 03</span>
+          <h3>Northside Coffee — Website &amp; đặt hàng online</h3>
+          <div class="case-block">
+            <h4>Vấn đề</h4>
+            <p>Thương hiệu cà phê độc lập cần một website thể hiện đúng cá tính thương hiệu, đồng thời nhận đơn đặt hàng trực tuyến mà không phụ thuộc nền tảng bên thứ ba.</p>
+          </div>
+          <div class="case-block">
+            <h4>Giải pháp</h4>
+            <p>Thiết kế website thương hiệu kết hợp catalogue sản phẩm, giỏ hàng và thanh toán, cùng chương trình tích điểm cho khách hàng thân thiết.</p>
+          </div>
+          <div class="case-block">
+            <h4>Kết quả</h4>
+            <p>Khách hàng tự quản trị nội dung sản phẩm qua CMS, giảm phụ thuộc vào đội ngũ kỹ thuật cho các thay đổi hàng ngày.</p>
+          </div>
+          <div class="project-meta"><span class="chip">Next.js</span><span class="chip">Stripe</span><span class="chip">Tailwind CSS</span></div>
+        </div>
+      </article>
+
+      <article class="case-study" id="orbit">
+        <div class="case-study-media" style="background:var(--surface);display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;">
+          <span class="project-tag" style="font-size:16px;">ORBIT CRM · INTERNAL TOOL</span>
+        </div>
+        <div class="case-study-body">
+          <span class="case-kicker">Case study 04</span>
+          <h3>Orbit CRM — Hệ thống quản lý khách hàng nội bộ</h3>
+          <div class="case-block">
+            <h4>Vấn đề</h4>
+            <p>Team kinh doanh quản lý khách hàng rải rác trên nhiều bảng tính, không có cái nhìn tổng thể về pipeline và hiệu suất từng nhân viên.</p>
+          </div>
+          <div class="case-block">
+            <h4>Giải pháp</h4>
+            <p>Xây dựng CRM nội bộ hợp nhất dữ liệu khách hàng, theo dõi pipeline theo giai đoạn và báo cáo hiệu suất theo thời gian thực.</p>
+          </div>
+          <div class="case-block">
+            <h4>Kết quả</h4>
+            <p>Toàn bộ team kinh doanh chuyển sang hệ thống mới sau 2 tuần đào tạo nội bộ, thay thế hoàn toàn quy trình bảng tính cũ.</p>
+          </div>
+          <div class="project-meta"><span class="chip">React</span><span class="chip">NestJS</span><span class="chip">AWS</span></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="cta-title">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <div class="od-stack" style="gap: 8px; max-width: 520px;">
+          <h2 id="cta-title">Dự án tiếp theo có thể là của bạn</h2>
+          <p>Mô tả bài toán của bạn, chúng tôi sẽ đề xuất hướng tiếp cận phù hợp.</p>
+        </div>
+        <a class="btn btn-primary" href="contact.html">Gửi brief ngay</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>MẠCH STUDIO</a>
+        <p>Team phát triển &amp; thiết kế sản phẩm số — đồng hành từ ý tưởng đến vận hành.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Điều hướng</h4>
+        <ul>
+          <li><a href="projects.html">Dự án</a></li>
+          <li><a href="expertise.html">Chuyên môn</a></li>
+          <li><a href="team.html">Đội ngũ</a></li>
+          <li><a href="process.html">Quy trình</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Liên hệ</h4>
+        <ul>
+          <li><a href="mailto:hello@machstudio.vn">hello@machstudio.vn</a></li>
+          <li><a href="tel:+842839991234">(028) 3999 1234</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Theo dõi</h4>
+        <ul>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Behance</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Mạch Studio. Nội dung minh họa cho mục đích thiết kế mẫu.</span>
+      <span>Tầng 5, 128 Nguyễn Huệ, Quận 1, TP.HCM</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
