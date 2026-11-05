@@ -126,10 +126,10 @@
                   <label for="project-type">Loại dự án<span class="required-mark" aria-hidden="true">*</span></label>
                   <select id="project-type" name="project-type" required>
                     <option value="">Chọn loại dự án</option>
-                    <option value="website">Website / landing page</option>
+                    <option value="internal">Hệ thống nội bộ</option>
                     <option value="webapp">Web app</option>
                     <option value="mobile">Mobile app</option>
-                    <option value="internal">Hệ thống nội bộ</option>
+                    <option value="website">Website / landing page</option>
                     <option value="other">Khác</option>
                   </select>
                   <span class="field-error" role="alert">Vui lòng chọn loại dự án.</span>
@@ -153,6 +153,8 @@
                   <span class="field-error" role="alert">Vui lòng mô tả dự án với ít nhất 20 ký tự.</span>
                 </div>
               </div>
+
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAAF0lja7dCLud4iyR" data-theme="dark" data-language="vi" data-size="flexible"></div>
 
               <button type="submit" class="btn btn-primary btn-block">Gửi brief</button>
               <p class="form-status" role="status" aria-live="polite"></p>
@@ -197,6 +199,7 @@
   </div>
 </footer>
 
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script src="script.js" defer></script>
 </body>
 </html>

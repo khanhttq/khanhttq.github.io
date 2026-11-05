@@ -539,7 +539,7 @@ h2.section-title { font-size: clamp(28px, 4vw, 44px); }
 .contact-info-block a:hover { color: var(--accent); }
 
 .form-card { padding: var(--gap-lg); }
-.od-field { gap: 6px; }
+.od-field { gap: 6px; align-content: start; }
 .od-field label {
   font-size: 14px;
   font-weight: 600;
@@ -575,6 +575,7 @@ h2.section-title { font-size: clamp(28px, 4vw, 44px); }
 
 .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap-sm); }
 .form-grid .od-field--full { grid-column: 1 / -1; }
+.cf-turnstile { min-height: 65px; }
 
 .form-status {
   display: none;
@@ -621,7 +622,7 @@ h2.section-title { font-size: clamp(28px, 4vw, 44px); }
 @media (max-width: 1024px) {
   .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; }
   .culture-band { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .contact-layout { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* The full nav collides with the brand and CTA below this width. */
@@ -659,6 +660,7 @@ h2.section-title { font-size: clamp(28px, 4vw, 44px); }
 }
 
 @media (max-width: 480px) {
+  .form-card { padding: 12px; }
   .wrap { padding: 0 var(--gap-sm); }
   .team-grid { grid-template-columns: 1fr; }
   .stat-row { grid-template-columns: 1fr; gap: var(--gap-md); }

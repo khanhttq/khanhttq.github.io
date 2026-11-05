@@ -111,6 +111,14 @@
         return;
       }
 
+      var captcha = form.elements["cf-turnstile-response"];
+      var captchaToken = captcha ? captcha.value : "";
+      if (!captchaToken) {
+        status.textContent = "Vui lòng hoàn tất bước xác minh trước khi gửi.";
+        status.classList.add("is-visible", "is-error");
+        return;
+      }
+
       var submitBtn = form.querySelector("button[type='submit']");
       submitBtn.disabled = true;
       submitBtn.textContent = "Đang gửi...";
@@ -122,6 +130,7 @@
 
       function finish(message, isError) {
         clearTimeout(timeout);
+        if (window.turnstile) window.turnstile.reset(); // tokens are single-use
         status.textContent = message;
         status.classList.toggle("is-error", isError);
         status.classList.add("is-visible");
@@ -142,7 +151,8 @@
               email: form.elements["email"].value,
               project_type: form.elements["project-type"].value,
               budget: form.elements["budget"].value,
-              brief: form.elements["brief"].value
+              brief: form.elements["brief"].value,
+              turnstile_token: captchaToken
             })
           });
 
