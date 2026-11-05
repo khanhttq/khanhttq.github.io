@@ -166,8 +166,7 @@ h2.section-title { font-size: clamp(28px, 4vw, 44px); }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(11, 11, 14, 0.86);
-  backdrop-filter: blur(10px);
+  background: var(--bg);
   border-bottom: 1px solid var(--border);
 }
 .site-header .wrap {
