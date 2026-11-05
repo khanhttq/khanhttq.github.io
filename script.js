@@ -72,6 +72,13 @@
     return valid;
   }
 
+  function initExperienceYears() {
+    var currentYear = new Date().getFullYear();
+    document.querySelectorAll("[data-start-year]").forEach(function (el) {
+      el.textContent = currentYear - Number(el.dataset.startYear);
+    });
+  }
+
   function initContactForm() {
     var form = document.querySelector("#brief-form");
     if (!form) return;
@@ -151,5 +158,6 @@
     initReveal();
     initProjectFilter();
     initContactForm();
+    initExperienceYears();
   });
 })();
