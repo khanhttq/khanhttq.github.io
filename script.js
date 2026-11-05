@@ -77,6 +77,12 @@
     document.querySelectorAll("[data-start-year]").forEach(function (el) {
       el.textContent = currentYear - Number(el.dataset.startYear);
     });
+    document.querySelectorAll("[data-start-years]").forEach(function (el) {
+      var total = el.dataset.startYears.split(",").reduce(function (sum, year) {
+        return sum + currentYear - Number(year);
+      }, 0);
+      el.textContent = total + "+";
+    });
   }
 
   function initContactForm() {
