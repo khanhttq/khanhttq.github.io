@@ -1,1 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8E2A3E"/><stop offset=".5" stop-color="#6C1D2E"/><stop offset="1" stop-color="#4A1220"/></linearGradient><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EBD3A4"/><stop offset=".5" stop-color="#C9A66B"/><stop offset="1" stop-color="#A2803F"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="#FBF8F2"/><g transform="translate(4 9) scale(.78)"><path fill="url(#b)" d="M6 4H18V30A10 10 0 0 0 38 30V4H50V30A22 22 0 0 1 6 30Z"/><path fill="url(#g)" d="M34 4H70V14H62V52H52V14H34Z"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#FBF8F2"/><svg x="5" y="9" width="54" height="46" viewBox="160 0 440 300" preserveAspectRatio="xMidYMid meet"><defs>
+<linearGradient id="ut" gradientUnits="userSpaceOnUse" x1="170" y1="0" x2="590" y2="0">
+<stop offset="0" stop-color="#5A161E"/><stop offset="0.3" stop-color="#7A2430"/><stop offset="0.48" stop-color="#8A2E38"/>
+<stop offset="0.66" stop-color="#B98B5C"/><stop offset="0.84" stop-color="#D9BE8C"/><stop offset="1" stop-color="#E8D2A4"/>
+</linearGradient>
+<linearGradient id="stem" gradientUnits="userSpaceOnUse" x1="0" y1="40" x2="0" y2="270">
+<stop offset="0" stop-color="#E4CB97"/><stop offset="1" stop-color="#B38D4D"/>
+</linearGradient>
+<linearGradient id="shade" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="290">
+<stop offset="0" stop-color="#FFFFFF" stop-opacity="0.14"/><stop offset="0.6" stop-color="#FFFFFF" stop-opacity="0"/>
+</linearGradient>
+</defs>
+<path d="M470 60V237" fill="none" stroke="url(#stem)" stroke-width="58" stroke-linecap="round"/>
+<path d="M470 60V237" fill="none" stroke="#000" stroke-opacity="0.10" stroke-width="10" stroke-linecap="round" transform="translate(16 0)"/>
+<path d="M199 38V175A76 76 0 0 0 351 175V100A62 62 0 0 1 413 38H557" fill="none" stroke="#3E0E14" stroke-opacity="0.18" stroke-width="58" stroke-linecap="round" stroke-linejoin="round" transform="translate(3 5)"/>
+<path d="M199 38V175A76 76 0 0 0 351 175V100A62 62 0 0 1 413 38H557" fill="none" stroke="url(#ut)" stroke-width="58" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M199 38V175A76 76 0 0 0 351 175V100A62 62 0 0 1 413 38H557" fill="none" stroke="url(#shade)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" transform="translate(-10 -8)"/>
+</svg></svg>
