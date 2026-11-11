@@ -20,27 +20,108 @@
     });
   }
 
+  var motionOK = window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
+
   function initReveal() {
     var items = document.querySelectorAll(".reveal");
     if (!items.length) return;
+    // Stagger items that share a parent (cards in a grid, stats in a row).
+    items.forEach(function (el) {
+      var siblings = Array.prototype.filter.call(el.parentNode.children, function (c) {
+        return c.classList.contains("reveal");
+      });
+      var i = siblings.indexOf(el);
+      if (i > 0) el.style.setProperty("--reveal-delay", Math.min(i, 5) * 90 + "ms");
+    });
     if (!("IntersectionObserver" in window)) {
       items.forEach(function (el) { el.classList.add("is-visible"); });
       return;
     }
     var observer = new IntersectionObserver(
       function (entries) {
-        entries.forEach(function (entry, index) {
-          if (entry.isIntersecting) {
-            setTimeout(function () {
-              entry.target.classList.add("is-visible");
-            }, (index % 6) * 40);
-            observer.unobserve(entry.target);
-          }
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
     );
     items.forEach(function (el) { observer.observe(el); });
+  }
+
+  // Count stat numbers up from zero when they scroll into view ("06", "60+", "100%").
+  function initCountUp() {
+    if (!motionOK || !("IntersectionObserver" in window)) return;
+    var nums = document.querySelectorAll(".stat-num");
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          observer.unobserve(entry.target);
+          var el = entry.target;
+          var match = /^(\d+)(.*)$/.exec(el.textContent.trim());
+          if (!match) return;
+          var target = Number(match[1]);
+          if (target < 5) return;
+          var pad = match[1].charAt(0) === "0" ? match[1].length : 0;
+          var suffix = match[2];
+          var start = null;
+          var duration = 1400;
+          el.setAttribute("aria-label", el.textContent.trim());
+          function frame(now) {
+            if (start === null) start = now;
+            var t = Math.min((now - start) / duration, 1);
+            var value = String(Math.round(target * (1 - Math.pow(1 - t, 3))));
+            while (value.length < pad) value = "0" + value;
+            el.textContent = value + suffix;
+            if (t < 1) requestAnimationFrame(frame);
+          }
+          requestAnimationFrame(frame);
+        });
+      },
+      { threshold: 0.6 }
+    );
+    nums.forEach(function (el) { observer.observe(el); });
+  }
+
+  // Header shadow, scroll progress line and a gentle hero image parallax.
+  function initScrollEffects() {
+    var header = document.querySelector(".site-header");
+    var progress = null;
+    if (header) {
+      progress = document.createElement("div");
+      progress.className = "scroll-progress";
+      progress.setAttribute("aria-hidden", "true");
+      header.appendChild(progress);
+    }
+    var parallaxImgs = motionOK ? document.querySelectorAll(".hero-media img") : [];
+    var wide = window.matchMedia("(min-width: 769px)");
+    var ticking = false;
+
+    function update() {
+      ticking = false;
+      var y = window.scrollY;
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      if (header) {
+        header.classList.toggle("is-scrolled", y > 8);
+        progress.style.setProperty("--scroll-progress", max > 0 ? Math.min(y / max, 1) : 0);
+      }
+      Array.prototype.forEach.call(parallaxImgs, function (img) {
+        if (!wide.matches) { img.style.removeProperty("--parallax"); return; }
+        var rect = img.parentNode.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+        var offset = (rect.top + rect.height / 2 - window.innerHeight / 2) * -0.08;
+        var limit = rect.height * 0.035;
+        img.style.setProperty("--parallax", Math.max(-limit, Math.min(limit, offset)).toFixed(1) + "px");
+      });
+    }
+    function onScroll() {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    update();
   }
 
   function initProjectFilter() {
@@ -171,9 +252,11 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     initNav();
+    initExperienceYears();
     initReveal();
+    initCountUp();
+    initScrollEffects();
     initProjectFilter();
     initContactForm();
-    initExperienceYears();
   });
 })();
