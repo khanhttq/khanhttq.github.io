@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 56" role="img" aria-label="UTech Experts">
+  <defs>
+    <linearGradient id="ut-burgundy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8E2A3E"/>
+      <stop offset="0.5" stop-color="#6C1D2E"/>
+      <stop offset="1" stop-color="#4A1220"/>
+    </linearGradient>
+    <linearGradient id="ut-gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EBD3A4"/>
+      <stop offset="0.5" stop-color="#C9A66B"/>
+      <stop offset="1" stop-color="#A2803F"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#ut-burgundy)" d="M6 4H18V30A10 10 0 0 0 38 30V4H50V30A22 22 0 0 1 6 30Z"/>
+  <path fill="url(#ut-gold)" d="M34 4H70V14H62V52H52V14H34Z"/>
+</svg>
